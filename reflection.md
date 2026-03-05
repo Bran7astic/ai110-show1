@@ -8,7 +8,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
 
----
+The first thing I noticed was that the first attempt didn't decrement after my first guess, it was only after the second that it started to go down. Next, the feedback is backwards, and prompts me to go higher when the actual secret is lower.
 
 ## 2. How did you use AI as a teammate?
 
@@ -16,7 +16,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
----
+I used Copilot for this project, and asked it firstly to explain the game logic. Not the intention, but rather what actually happens. It noticed that the secret would alternate between an int and string form every guess, and I found and verified where this occurs. 
 
 ## 3. Debugging and testing your fixes
 
