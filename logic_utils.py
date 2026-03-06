@@ -3,15 +3,32 @@ def get_range_for_difficulty(difficulty: str):
     raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
 
 
+# FIX: refactored parse_guess into logic_utils.py using claude code
 def parse_guess(raw: str):
     """
     Parse user input into an int guess.
 
     Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if raw is None:
+        return False, None, "Enter a guess."
 
+    raw = raw.strip()
 
+    if raw == "":
+        return False, None, "Enter a guess."
+
+    try:
+        if "." in raw:
+            value = int(float(raw))
+        else:
+            value = int(raw)
+    except (ValueError, OverflowError):
+        return False, None, "That is not a number."
+
+    return True, value, None
+
+# FIX: refactored check_guess into logic_utils.py using copilot
 def check_guess(guess, secret):
     """
     Compare guess to secret and return (outcome, message).

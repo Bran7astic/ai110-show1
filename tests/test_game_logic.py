@@ -1,15 +1,4 @@
-import sys
-import os
-
-# parse_guess lives in app.py which has top-level Streamlit calls.
-# To avoid import errors, we extract it by patching streamlit before import.
-import unittest.mock as mock
-sys.modules.setdefault("streamlit", mock.MagicMock())
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from app import parse_guess
-
-from logic_utils import check_guess
+from logic_utils import check_guess, parse_guess
 
 # --- parse_guess tests ---
 
@@ -25,8 +14,22 @@ def test_parse_guess_empty_string():
     assert value is None
     assert err == "Enter a guess."
 
+def test_parse_guess_whitespace_only():
+    # Edge case: whitespace-only should say "Enter a guess.", not "That is not a number."
+    ok, value, err = parse_guess("   ")
+    assert ok is False
+    assert value is None
+    assert err == "Enter a guess."
+
 def test_parse_guess_valid_integer():
     ok, value, err = parse_guess("42")
+    assert ok is True
+    assert value == 42
+    assert err is None
+
+def test_parse_guess_valid_integer_with_whitespace():
+    # Edge case: leading/trailing whitespace around a valid number
+    ok, value, err = parse_guess("  42  ")
     assert ok is True
     assert value == 42
     assert err is None
@@ -62,8 +65,9 @@ def test_parse_guess_mixed_alphanum():
     assert value is None
     assert err == "That is not a number."
 
-def test_parse_guess_special_characters():
-    ok, value, err = parse_guess("!@#")
+def test_parse_guess_infinity():
+    # Edge case: "inf" parses as float but int(float("inf")) raises OverflowError
+    ok, value, err = parse_guess("inf")
     assert ok is False
     assert value is None
     assert err == "That is not a number."
