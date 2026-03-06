@@ -8,7 +8,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
 
-The first thing I noticed was that the first attempt didn't decrement after my first guess, it was only after the second that it started to go down. Next, the feedback is backwards, and prompts me to go higher when the actual secret is lower.
+*The first thing I noticed was that the first attempt didn't decrement after my first guess, it was only after the second that it started to go down. Next, the feedback is backwards, and prompts me to go higher when the actual secret is lower.*
 
 ## 2. How did you use AI as a teammate?
 
@@ -16,7 +16,7 @@ The first thing I noticed was that the first attempt didn't decrement after my f
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
-I used Copilot for this project, and asked it firstly to explain the game logic. Not the intention, but rather what actually happens. It noticed that the secret would alternate between an int and string form every guess, and I found and verified where this occurs. 
+*I used Copilot for this project, and it correctly identified the issues with the check_guess() functions, and performed a refactor without any issues. As of writing, I currently have not run into incorrect or misleading AI suggestions.*
 
 ## 3. Debugging and testing your fixes
 
@@ -25,7 +25,7 @@ I used Copilot for this project, and asked it firstly to explain the game logic.
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
----
+*I decided a bug was fixed by looking at the code myself, and determining whether the logic made sense. For example, after the agent refactored the check_guess() function, I reread the code and made sure the imports were logical. Additionally, I performed manual tests in the streamlit app by playing the game and noticing whether the hints were accurate. I also ran tests using pytest, which Copilot also refactored to see if the hints were correct. This enhanced the effectiveness of the tests, as they weren't simply checking for correctness, but also the accuracy of the hints*
 
 ## 4. What did you learn about Streamlit and state?
 
