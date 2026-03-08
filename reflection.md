@@ -16,7 +16,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
-*I used Copilot for this project, and it correctly identified the issues with the check_guess() functions, and performed a refactor without any issues. As of writing, I currently have not run into incorrect or misleading AI suggestions.*
+*I used Copilot and Claude for this project, and they correctly identified the issues with the check_guess() functions, and performed a refactor without any issues. I ran into an issue where Claude suggested a fix so that the "attempts left" info correctly decrements with each submission, but it created another bug in the process, where the hints would no longer show*
 
 ## 3. Debugging and testing your fixes
 
