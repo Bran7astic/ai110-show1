@@ -30,14 +30,20 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
+  - *The secret number kept changing in the original app, as it would alternate between an int and a string each attempt, making the check for guess inconsistent*
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+  - *I'd describe sessions state and reruns similar to how React handles state. Regular variables will reset when the app reruns, and not be preserved. As a result, session state variables are necessary to preserve variable values for functions like incrementing and updating values*
 - What change did you make that finally gave the game a stable secret number?
+  - *In the refactored check_guess function, I casted both the guess and the secret number to an int the ensure consistent checking*
 
----
+
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+    - *One habit I'd like to reuse is to remain skeptical about AI suggestions, and to check and test all the code proposed*
 - What is one thing you would do differently next time you work with AI on a coding task?
+  - *Something I'd like to do do differently next time I work with AI on a coding task is to welcome agentic programming, now that I have a better understanding of how to properly use it. I used to never rely on agents, out of fear that it'd inhibit my understanding*
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  - *This project changed the way I think about AI generated code, as although it reinforced that AI can certainly make mistakes, that doesn't mean it's use should be entirely omitted. AI can serve as a powerful debugging and comprehension tool for unfamiliar codebases, and can serve as an essential component in the debugging process*

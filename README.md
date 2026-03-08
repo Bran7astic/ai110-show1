@@ -25,13 +25,27 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose.
+   - This game's purpose is to have the user guess the secret number within a certain range, depending on chosen difficulty. The code is AI generated, and has some bugs that are meant to be identified and fixed.
+- [x] Detail which bugs you found.
+   - Some bugs I found included:
+      1. Hint logic being backwards
+      2. "New Game" button not resetting the game state
+      3. The displayed number of attempts being incorrect
+      4. The user having one less attempt than described
+      5. Inconsistent logic for checking guesses
+- [x] Explain what fixes you applied.
+   - Some fixes I applied included
+      1. Using Copilot and Claude to refactor logic functions into a separate file
+      2. Creating test cases to test effectiveness of refactored functions
+      3. Restructuring some of the program so that rerenders are done at appropriate times
+
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [x] [Insert a screenshot of your fixed, winning game here]
+
+<img src="./preview.png"/>
 
 ## 🚀 Stretch Features
 
